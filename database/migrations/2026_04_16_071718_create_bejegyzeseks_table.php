@@ -13,6 +13,9 @@ return new class extends Migration
     {
         Schema::create('bejegyzeseks', function (Blueprint $table) {
             $table->id();
+            $table->string('tevekenyseg_id');
+            $table->string('osztaly_nev');
+            $table->string('allapot');
             $table->timestamps();
         });
     }
