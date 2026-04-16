@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('bejegyzeseks', function (Blueprint $table) {
             $table->id();
-            $table->string('tevekenyseg_id');
+            $table->foreignId('tevekenyseg_id')->constrained('tevekenysegs', 'tevekenyseg_id')->onDelete('cascade');
             $table->string('osztaly_nev');
             $table->boolean('allapot')->default(false);
             $table->timestamps();
