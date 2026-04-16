@@ -16,6 +16,12 @@ class bejegyzesek extends Model
         'allapot',
     ];
 
+    // relational helper: bejegyzes -> tevekenyseg
+    public function tevekenyseg()
+    {
+        return $this->belongsTo(\App\Models\Tevekenyseg::class, 'tevekenyseg_id');
+    }
+
     public function getAllapotLabelAttribute(): string
     {
         return $this->allapot ? 'Elfogadva' : 'Nincs elfogadva';
