@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('tevekenyseg_id');
             $table->string('osztaly_nev');
-            $table->string('allapot');
+            $table->boolean('allapot')->default(false);
             $table->timestamps();
         });
     }
